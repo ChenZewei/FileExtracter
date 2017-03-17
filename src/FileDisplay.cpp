@@ -11,9 +11,9 @@ using namespace std;
 int main(int argc, char** argv)
 {
 	string path;
-	char buf[256];
+	string buf;
 	if(1 == argc)
-		path = "input/result.csv";
+		path = "input/result-step-by-step.csv";
 	else
 		path = argv[1];
 
@@ -27,23 +27,12 @@ int main(int argc, char** argv)
 
 	ifstream input_file(path.data(), ifstream::in);
 
-
-	while(!input_file.eof())
-	//while(input_file.get(buf, '\n'))
+	while(getline(input_file, buf))
 	{
-		input_file.get(buf, 256, '\n');
 		cout<<buf<<endl;
 	}
 
-	//input_file.get(buf, 256, '\n');
-	//cout<<buf<<endl;
-/*
-	char ch[256];
-	while(input_file.get(ch, 256, '\n'))
-	{
-		cout<<ch<<end;
-	}
-*/
+
 	input_file.close();
 	return 0;
 }
