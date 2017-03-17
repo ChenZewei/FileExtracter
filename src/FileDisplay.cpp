@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 	string path;
 	string buf;
 	if(1 == argc)
-		path = "input/result-step-by-step.csv";
+		path = "input/result-logs.csv";
 	else
 		path = argv[1];
 
